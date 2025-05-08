@@ -1,6 +1,5 @@
-// Problem -> 1
-
-function formatString(input: string, toUpper?: boolean) {
+// ->
+function formatString(input: string, toUpper?: boolean): string {
   if (toUpper || toUpper === undefined) {
     return input.toUpperCase();
   } else {
@@ -8,9 +7,15 @@ function formatString(input: string, toUpper?: boolean) {
   }
 }
 
-const result = formatString("bangladesh");
+formatString("bangladesh");
 
-// Problem -> 2
+// ->
+const books = [
+  { title: "Book A", rating: 4.5 },
+  { title: "Book B", rating: 3.2 },
+  { title: "Book C", rating: 5.0 },
+  { title: "Book D", rating: 4.6 },
+];
 
 function filterByRating(
   items: { title: string; rating: number }[]
@@ -26,25 +31,16 @@ function filterByRating(
   return book;
 }
 
-const books = [
-  { title: "Book A", rating: 4.5 },
-  { title: "Book B", rating: 3.2 },
-  { title: "Book C", rating: 5.0 },
-  { title: "Book D", rating: 4.6 },
-];
-
 filterByRating(books);
 
-// Problem -> 3
-
+// ->
 function concatenateArray<T>(...array: T[][]): T[] {
   return array.flat();
 }
 
 concatenateArray([1, 2], [3, 4], [5]);
 
-// Problem -> 4
-
+// ->
 class Vehicle {
   private make: string;
   private year: number;
@@ -54,8 +50,8 @@ class Vehicle {
     this.year = year;
   }
 
-  getInfo() {
-    // console.log(`Make: ${this.make} , Year: ${this.year}`);
+  getInfo(): string {
+    return `Make: ${this.make} , Year: ${this.year}`;
   }
 }
 
@@ -67,8 +63,8 @@ class Car extends Vehicle {
     this.model = model;
   }
 
-  getModel() {
-    // console.log(`Model: ${this.model}`);
+  getModel(): string {
+    return `Model: ${this.model}`;
   }
 }
 
@@ -77,8 +73,7 @@ const myCar = new Car("Toyota", 2020, "corolla");
 myCar.getInfo();
 myCar.getModel();
 
-// Problem -> 5
-
+// ->
 function processValue(value: string | number): number {
   if (typeof value === "string") {
     const toArray: string[] = value.split("");
@@ -93,8 +88,7 @@ function processValue(value: string | number): number {
 processValue("hello");
 processValue(10);
 
-// Problem -> 6
-
+// ->
 interface Product {
   name: string;
   price: number;
@@ -110,7 +104,7 @@ const products: Array<Product> = [
 function getMostExpensiveProduct(products: Product[]): Product | null {
   if (products.length) {
     const highestProduct: Product = products.reduce(
-      (maxItem: Product, minItem: Product) =>
+      (maxItem: Product, minItem: Product): Product =>
         maxItem.price > minItem.price ? maxItem : minItem
     );
     return highestProduct;
@@ -123,7 +117,6 @@ getMostExpensiveProduct(products);
 
 // Problem -> 7
 
-
 enum Day {
   Monday,
   Tuesday,
@@ -131,28 +124,26 @@ enum Day {
   Thursday,
   Friday,
   Saturday,
-  Sunday
+  Sunday,
 }
 
 function getDayType(day: Day): string {
   switch (day) {
     case Day.Saturday:
     case Day.Sunday:
-      return "Weekend"
-  
+      return "Weekend";
+
     default:
-     return "Weekday"
+      return "Weekday";
   }
 }
 
-console.log(getDayType(Day.Friday));
+getDayType(Day.Friday)
 
-
-// Problem -> 8
-
+// ->
 async function squareAsync(n: number): Promise<number> {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
+  return new Promise((resolve, reject): void => {
+    setTimeout(():void => {
       if (n < 0) {
         reject(new Error("Negative number not allowed"));
       } else {
