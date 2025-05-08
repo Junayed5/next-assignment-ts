@@ -37,15 +37,11 @@ filterByRating(books);
 
 // Problem -> 3
 
-// function concatenateArray<T>(...array: T[][]): T[] {
-//   let data = [];
-//   const looping = array.map((arr) => arr.map((arr2) => data.push(data)));
-//   console.log(data);
-// }
+function concatenateArray<T>(...array: T[][]): T[] {
+  return array.flat();
+}
 
-// concatenateArray([1, 2], [3, 4], [5]);
-
-// later 3
+concatenateArray([1, 2], [3, 4], [5]);
 
 // Problem -> 4
 
@@ -59,7 +55,7 @@ class Vehicle {
   }
 
   getInfo() {
-    console.log(`Make: ${this.make} , Year: ${this.year}`);
+    // console.log(`Make: ${this.make} , Year: ${this.year}`);
   }
 }
 
@@ -72,7 +68,7 @@ class Car extends Vehicle {
   }
 
   getModel() {
-    console.log(`Model: ${this.model}`);
+    // console.log(`Model: ${this.model}`);
   }
 }
 
@@ -119,9 +115,8 @@ function getMostExpensiveProduct(products: Product[]): Product | null {
     );
     return highestProduct;
   } else {
-    return null
+    return null;
   }
 }
 
-getMostExpensiveProduct(products)
-
+getMostExpensiveProduct(products);
