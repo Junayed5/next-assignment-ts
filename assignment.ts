@@ -115,7 +115,7 @@ function getMostExpensiveProduct(products: Product[]): Product | null {
 
 getMostExpensiveProduct(products);
 
-// Problem -> 7
+// -> 
 
 enum Day {
   Monday,
