@@ -87,14 +87,11 @@ function processValue(value: string | number): number {
   if (typeof value === "string") {
     const toArray: string[] = value.split("");
     return toArray.length;
-  }
-
-  if (typeof value === "number") {
+  } else if (typeof value === "number") {
     return value * 2;
   } else {
-    return 0
+    return 0;
   }
-
 }
 
 processValue("hello");
@@ -102,8 +99,29 @@ processValue(10);
 
 // Problem -> 6
 
+interface Product {
+  name: string;
+  price: number;
+}
 
+const products: Array<Product> = [
+  { name: "Pen", price: 10 },
+  { name: "Notebook", price: 25 },
+  { name: "Bag", price: 50 },
+  { name: "Book", price: 100 },
+];
 
+function getMostExpensiveProduct(products: Product[]): Product | null {
+  if (products.length) {
+    const highestProduct: Product = products.reduce(
+      (maxItem: Product, minItem: Product) =>
+        maxItem.price > minItem.price ? maxItem : minItem
+    );
+    return highestProduct;
+  } else {
+    return null
+  }
+}
 
-
+getMostExpensiveProduct(products)
 
