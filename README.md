@@ -2,7 +2,7 @@
 
 There are some differences between the interface and types in TypeScript. Both interface and type can be used to define the shape of objects, but there are several key differences and use cases where one might be preferred over the other
 
-### type
+# type 
 
 1. It can support conditional and map types also.
 
@@ -12,7 +12,8 @@ There are some differences between the interface and types in TypeScript. Both i
 
 4. multiple interfaces with the same name are merged.
 
-### interface
+
+# interface
 
 1. It doesn't support conditional and map type.
 
