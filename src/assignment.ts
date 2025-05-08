@@ -123,6 +123,31 @@ getMostExpensiveProduct(products);
 
 // Problem -> 7
 
+
+enum Day {
+  Monday,
+  Tuesday,
+  Wednesday,
+  Thursday,
+  Friday,
+  Saturday,
+  Sunday
+}
+
+function getDayType(day: Day): string {
+  switch (day) {
+    case Day.Saturday:
+    case Day.Sunday:
+      return "Weekend"
+  
+    default:
+     return "Weekday"
+  }
+}
+
+console.log(getDayType(Day.Friday));
+
+
 // Problem -> 8
 
 async function squareAsync(n: number): Promise<number> {
