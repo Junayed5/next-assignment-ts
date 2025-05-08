@@ -34,3 +34,5 @@ const books = [
 ];
 
 filterByRating(books);
+
+// Problem -> 3
