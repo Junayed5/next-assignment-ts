@@ -47,38 +47,63 @@ filterByRating(books);
 
 // later 3
 
-
 // Problem -> 4
 
-class Vehicle  {
-    private make: string;
-    private year : number;
+class Vehicle {
+  private make: string;
+  private year: number;
 
-    constructor(make: string, year: number){
-        this.make = make;
-        this.year = year;
-    }
+  constructor(make: string, year: number) {
+    this.make = make;
+    this.year = year;
+  }
 
-    getInfo() {
-        console.log(`Make: ${this.make} , Year: ${this.year}`);
-        
-    }
+  getInfo() {
+    console.log(`Make: ${this.make} , Year: ${this.year}`);
+  }
 }
 
 class Car extends Vehicle {
-    private model : string;
+  private model: string;
 
-    constructor(make: string, year: number, model: string){
-        super(make, year)
-        this.model = model;
-    }
+  constructor(make: string, year: number, model: string) {
+    super(make, year);
+    this.model = model;
+  }
 
-    getModel(){
-        console.log(`Model: ${this.model}`);
-    }
+  getModel() {
+    console.log(`Model: ${this.model}`);
+  }
 }
 
-const myCar = new Car('Toyota', 2020, "corolla");
+const myCar = new Car("Toyota", 2020, "corolla");
 
-myCar.getInfo()
-myCar.getModel()
+myCar.getInfo();
+myCar.getModel();
+
+// Problem -> 5
+
+function processValue(value: string | number): number {
+  if (typeof value === "string") {
+    const toArray: string[] = value.split("");
+    return toArray.length;
+  }
+
+  if (typeof value === "number") {
+    return value * 2;
+  } else {
+    return 0
+  }
+
+}
+
+processValue("hello");
+processValue(10);
+
+// Problem -> 6
+
+
+
+
+
+
